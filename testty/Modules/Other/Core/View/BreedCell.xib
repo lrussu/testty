@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BreedCell" customModule="testty" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="BreedCell" customModule="testty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kfx-VF-mte">
+                        <rect key="frame" x="240" y="13" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="KFe-5q-BdQ"/>
+                            <constraint firstAttribute="width" secondItem="kfx-VF-mte" secondAttribute="height" multiplier="23:11" constant="-87.272727272727252" id="z9Q-Yu-IeH"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ng-8H-zOA">
+                        <rect key="frame" x="10" y="33" width="194" height="41"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kfx-VF-mte" secondAttribute="trailing" id="06G-Br-YRo"/>
+                    <constraint firstItem="kfx-VF-mte" firstAttribute="leading" secondItem="0ng-8H-zOA" secondAttribute="trailing" constant="36" id="ETB-dm-5P8"/>
+                    <constraint firstItem="0ng-8H-zOA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-6" id="H1U-SZ-S5U"/>
+                    <constraint firstItem="0ng-8H-zOA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fbB-GW-g6W"/>
+                    <constraint firstItem="kfx-VF-mte" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hKg-Jp-i2d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="breedImageView" destination="kfx-VF-mte" id="Ueu-4g-oRA"/>
+                <outlet property="breedNameLabel" destination="0ng-8H-zOA" id="O2H-9Y-GiO"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="35.5"/>
+        </tableViewCell>
+    </objects>
+</document>

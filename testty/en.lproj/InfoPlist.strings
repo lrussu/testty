@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  testty
+
+  Created by Liudmila Russu on 3/12/18.
+  Copyright © 2018 Liudmila Russu. All rights reserved.
+*/
+
+
+"CFBundleDisplayName" = "Собаки";
+"NSHumanReadableCopyright" = "2018 Василий Пупкин ООО. Все права есть.";
