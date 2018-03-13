@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="testty" customModuleProvider="target">
             <connections>
                 <outlet property="buttonLewisCarroll" destination="cwQ-Es-zIX" id="ryy-nm-9oE"/>
+                <outlet property="helloImage" destination="3Cb-dQ-ieN" id="gf5-uD-5Xz"/>
                 <outlet property="mainButton" destination="bom-H4-GSS" id="crM-B7-Kev"/>
                 <outlet property="spinner" destination="6Cu-f9-mEu" id="AAp-kW-9IX"/>
                 <outlet property="view" destination="aaa-bb-ccc" id="mmm-nn-xxx"/>
@@ -28,29 +29,26 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="GvF-CI-imY">
-                    <rect key="frame" x="87.5" y="205" width="200" height="257"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GvF-CI-imY">
+                    <rect key="frame" x="87" y="185.5" width="201" height="296"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Cb-dQ-ieN">
+                            <rect key="frame" x="0.0" y="0.0" width="201" height="117"/>
+                        </imageView>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6Cu-f9-mEu">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="37"/>
+                            <rect key="frame" x="0.0" y="127" width="201" height="37"/>
                             <color key="color" red="1" green="0.10168873354311858" blue="0.14528708435374604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </activityIndicatorView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bom-H4-GSS">
-                            <rect key="frame" x="0.0" y="87" width="200" height="60"/>
+                            <rect key="frame" x="0.0" y="174" width="201" height="60"/>
                             <color key="backgroundColor" red="0.31194187584208588" green="1" blue="0.72601058920078998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="200" id="bgS-lf-5uz"/>
-                            </constraints>
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="35"/>
                             <inset key="titleEdgeInsets" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Button"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwQ-Es-zIX">
-                            <rect key="frame" x="0.0" y="197" width="200" height="60"/>
+                            <rect key="frame" x="0.0" y="244" width="201" height="52"/>
                             <color key="backgroundColor" red="0.31344300508499146" green="1" blue="0.72668033838272095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="60" id="QZz-7e-md3"/>
-                            </constraints>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="29"/>
                             <inset key="titleEdgeInsets" minX="7" minY="0.0" maxX="7" maxY="0.0"/>
                             <state key="normal" title="Lewis Carroll"/>
@@ -60,8 +58,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="GvF-CI-imY" firstAttribute="centerY" secondItem="aaa-bb-ccc" secondAttribute="centerY" id="XP2-gr-UTU"/>
-                <constraint firstItem="GvF-CI-imY" firstAttribute="centerX" secondItem="aaa-bb-ccc" secondAttribute="centerX" id="hDd-fH-rr8"/>
+                <constraint firstItem="GvF-CI-imY" firstAttribute="centerX" secondItem="aaa-bb-ccc" secondAttribute="centerX" id="DvM-ij-Tb3"/>
+                <constraint firstItem="GvF-CI-imY" firstAttribute="centerY" secondItem="aaa-bb-ccc" secondAttribute="centerY" id="tXR-Pj-S6V"/>
             </constraints>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>

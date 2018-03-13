@@ -33,6 +33,7 @@ enum State {
 }
 
 class DashboardViewController: UIViewController, DashboardView {
+    @IBOutlet weak var helloImage: UIImageView!
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var mainButton: UIButton!
@@ -72,10 +73,11 @@ class DashboardViewController: UIViewController, DashboardView {
     }
 
     func setUpUI() {
-        self.title = NSLocalizedString("dog_breeds", comment: "")
+        self.title = .dogBreeds
         spinner.stopAnimating()
-        mainButton.setTitle(NSLocalizedString("start", comment: ""), for: .normal)
-        buttonLewisCarroll.setTitle(NSLocalizedString("lewis_carroll", comment: ""), for: .normal)
+        mainButton.setTitle(.start, for: .normal)
+        helloImage.image = UIImage(named: .helloImage)
+        buttonLewisCarroll.setTitle(.lewisCarroll, for: .normal)
         buttonLewisCarroll.titleLabel?.minimumScaleFactor = 0.5;
         buttonLewisCarroll.titleLabel?.adjustsFontSizeToFitWidth = true
         mainButton.addTarget(self, action: #selector(tapped), for: .touchDown)

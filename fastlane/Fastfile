@@ -18,8 +18,8 @@ platform :ios do
     # add actions here: https://docs.fastlane.tools/actions
   end
 
-lane :sh do
-	sh("ls")
+lane :update_localization do
+	sh("git submodule update --remote --recursive")
 	echo(message: "Hi")
 	build_number = get_build_number(xcodeproj: "testty.xcodeproj")
 	echo(message: build_number)

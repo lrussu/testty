@@ -21,9 +21,9 @@ or alternatively using `brew cask install fastlane`
 fastlane ios first_lane
 ```
 Description of what the lane does
-### ios sh
+### ios update_localization
 ```
-fastlane ios sh
+fastlane ios update_localization
 ```
 
 ### ios tests

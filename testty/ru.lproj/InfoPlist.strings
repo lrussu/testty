@@ -1,11 +1,2 @@
-/* 
-  InfoPlist.strings
-  testty
-
-  Created by Liudmila Russu on 3/12/18.
-  Copyright © 2018 Liudmila Russu. All rights reserved.
-*/
-
-
-"CFBundleDisplayName" = "Dogs";
-"NSHumanReadableCopyright" = "2018 Vasya Pupkin Computing Inc. All rights reserved.";
+"CFBundleDisplayName" = "Собаки";
+"CFBundleName" = "Собаки";

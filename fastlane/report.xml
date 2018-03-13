@@ -5,27 +5,27 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.005083">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.008372">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: ls" time="0.011306">
+      <testcase classname="fastlane.lanes" name="1: git submodule update --remote --recursive" time="0.879036">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: get_build_number" time="0.307572">
+      <testcase classname="fastlane.lanes" name="2: get_build_number" time="0.325197">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: increment_version_number" time="0.694684">
+      <testcase classname="fastlane.lanes" name="3: increment_version_number" time="0.751042">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: get_version_number" time="0.353819">
+      <testcase classname="fastlane.lanes" name="4: get_version_number" time="0.389748">
         
       </testcase>
     

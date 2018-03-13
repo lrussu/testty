@@ -1,0 +1,3 @@
+[submodule "testty_localization"]
+	path = testty_localization
+	url = https://github.com/lrussu/testty_localization

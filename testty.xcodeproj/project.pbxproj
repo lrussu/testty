@@ -23,8 +23,11 @@
 		6F4CAAEC24B30755D1F7479F /* OtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61D3AF4E00B897620C99AD99 /* OtherViewController.xib */; };
 		6F64A35CB3055B6C1CF0A0AD /* DashboardViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2DDFE675F76CD9F5BDB60A /* DashboardViewTests.swift */; };
 		73F490432287492941E35C53 /* BreedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D80AB5B140ABAECE383C8F7 /* BreedPresenter.swift */; };
-		7905064C20567607006AA6EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7905064E20567607006AA6EC /* Localizable.strings */; };
-		790506532056A0AD006AA6EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 790506552056A0AD006AA6EC /* InfoPlist.strings */; };
+		790506582056BEC8006AA6EC /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790506572056BEC8006AA6EC /* String+Localization.swift */; };
+		790506612056C1F3006AA6EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 790506632056C1F3006AA6EC /* Localizable.strings */; };
+		790506672056C77C006AA6EC /* import_strings.php in Resources */ = {isa = PBXBuildFile; fileRef = 790506662056C77C006AA6EC /* import_strings.php */; };
+		7905066B2056D39E006AA6EC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7905066A2056D39E006AA6EC /* String+Extension.swift */; };
+		7905067A2057D5A9006AA6EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7905067C2057D5A9006AA6EC /* InfoPlist.strings */; };
 		7951725D2046A63C0095BC5C /* ImageBreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7951725B2046A63C0095BC5C /* ImageBreedCell.swift */; };
 		7951725E2046A63C0095BC5C /* ImageBreedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7951725C2046A63C0095BC5C /* ImageBreedCell.xib */; };
 		795172602047F2C00095BC5C /* BreedImagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7951725F2047F2C00095BC5C /* BreedImagesLayout.swift */; };
@@ -106,12 +109,23 @@
 		6A8FEA383E2A77A678BD79C5 /* BreedInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreedInteractor.swift; sourceTree = "<group>"; };
 		6AD31815142212F1FBFB031B /* Pods-testtyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testtyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-testtyTests/Pods-testtyTests.release.xcconfig"; sourceTree = "<group>"; };
 		75238647E9CDF1BBA3760C54 /* BreedPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreedPresenterTests.swift; sourceTree = "<group>"; };
-		79050648205674FE006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		79050649205674FE006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		7905064F20567612006AA6EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7905065020567616006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		790506542056A0AD006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		790506562056A0B6006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		790506572056BEC8006AA6EC /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		790506662056C77C006AA6EC /* import_strings.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = import_strings.php; sourceTree = "<group>"; };
+		7905066A2056D39E006AA6EC /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7905066C2056D9B9006AA6EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		790506722056E41B006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		790506732056E41B006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		790506742056E441006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		790506752057C0C8006AA6EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		790506762057C0C9006AA6EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		790506772057C0C9006AA6EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7905067B2057D5A9006AA6EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7905067D2057D5B2006AA6EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7905067E2057D5BE006AA6EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7905067F2057F1AA006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		790506802057F1AA006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		790506812057F1E8006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		790506822057F205006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7951725B2046A63C0095BC5C /* ImageBreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBreedCell.swift; sourceTree = "<group>"; };
 		7951725C2046A63C0095BC5C /* ImageBreedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageBreedCell.xib; sourceTree = "<group>"; };
 		7951725F2047F2C00095BC5C /* BreedImagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImagesLayout.swift; sourceTree = "<group>"; };
@@ -316,6 +330,7 @@
 		79606479203C66AA00E88CFF = {
 			isa = PBXGroup;
 			children = (
+				790506662056C77C006AA6EC /* import_strings.php */,
 				79606484203C66AA00E88CFF /* testty */,
 				79606499203C66AA00E88CFF /* testtyTests */,
 				796064A4203C66AA00E88CFF /* testtyUITests */,
@@ -346,8 +361,10 @@
 				79CA56662040295300DC7F30 /* Common */,
 				79CA566320401E2200DC7F30 /* BreedModel.xcdatamodeld */,
 				09397C57E7FA9C6C7EA0B412 /* Modules */,
-				7905064E20567607006AA6EC /* Localizable.strings */,
-				790506552056A0AD006AA6EC /* InfoPlist.strings */,
+				790506572056BEC8006AA6EC /* String+Localization.swift */,
+				790506632056C1F3006AA6EC /* Localizable.strings */,
+				7905066A2056D39E006AA6EC /* String+Extension.swift */,
+				7905067C2057D5A9006AA6EC /* InfoPlist.strings */,
 			);
 			path = testty;
 			sourceTree = "<group>";
@@ -608,6 +625,7 @@
 				79606480203C66AA00E88CFF /* Resources */,
 				1E7A8D1764339CF1F3318F89 /* [CP] Embed Pods Frameworks */,
 				AF4F1B380EC1F85311475785 /* [CP] Copy Pods Resources */,
+				790506652056C6CA006AA6EC /* Localization */,
 			);
 			buildRules = (
 			);
@@ -688,9 +706,10 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				ru,
+				ar,
+				en,
 			);
 			mainGroup = 79606479203C66AA00E88CFF;
 			productRefGroup = 79606483203C66AA00E88CFF /* Products */;
@@ -709,16 +728,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790506612056C1F3006AA6EC /* Localizable.strings in Resources */,
 				7951725E2046A63C0095BC5C /* ImageBreedCell.xib in Resources */,
 				79606490203C66AA00E88CFF /* LaunchScreen.storyboard in Resources */,
 				7960648D203C66AA00E88CFF /* Assets.xcassets in Resources */,
 				79D3B37D203EA83100569D27 /* BreedCell.xib in Resources */,
-				7905064C20567607006AA6EC /* Localizable.strings in Resources */,
 				7960648B203C66AA00E88CFF /* Main.storyboard in Resources */,
 				9FA2C3DD8649C24D3E39BAA3 /* DashboardViewController.xib in Resources */,
 				6F4CAAEC24B30755D1F7479F /* OtherViewController.xib in Resources */,
+				790506672056C77C006AA6EC /* import_strings.php in Resources */,
+				7905067A2057D5A9006AA6EC /* InfoPlist.strings in Resources */,
 				32AC46E3BCBEA0DB7C5E6A85 /* BreedViewController.xib in Resources */,
-				790506532056A0AD006AA6EC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,6 +810,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testtyTests/Pods-testtyTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		790506652056C6CA006AA6EC /* Localization */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Localization;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "php ./import_strings.php";
+		};
 		AF4F1B380EC1F85311475785 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -856,10 +890,12 @@
 				7986D8FB2045C04900B0D93B /* BreedDataSource.swift in Sources */,
 				E06BBB463813B1F452A678CE /* DashboardPresenter.swift in Sources */,
 				A0223168C44FCC659CDFB5FB /* DashboardInteractor.swift in Sources */,
+				7905066B2056D39E006AA6EC /* String+Extension.swift in Sources */,
 				62FA45A08E12F954940A6115 /* DashboardRouter.swift in Sources */,
 				79CA56682040297E00DC7F30 /* CoreDataStack.swift in Sources */,
 				FFD2D006D15D9767DD2E3AD5 /* DashboardBuilder.swift in Sources */,
 				79D3B383203ECD9700569D27 /* Breed.swift in Sources */,
+				790506582056BEC8006AA6EC /* String+Localization.swift in Sources */,
 				7951725D2046A63C0095BC5C /* ImageBreedCell.swift in Sources */,
 				7BE970BA933920A43086B699 /* OtherViewController.swift in Sources */,
 				80E4FFBF44AF9F64B657931B /* OtherPresenter.swift in Sources */,
@@ -924,20 +960,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7905064E20567607006AA6EC /* Localizable.strings */ = {
+		790506632056C1F3006AA6EC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7905064F20567612006AA6EC /* Base */,
-				7905065020567616006AA6EC /* ru */,
+				7905066C2056D9B9006AA6EC /* Base */,
+				790506742056E441006AA6EC /* ru */,
+				790506772057C0C9006AA6EC /* ar */,
+				790506812057F1E8006AA6EC /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		790506552056A0AD006AA6EC /* InfoPlist.strings */ = {
+		7905067C2057D5A9006AA6EC /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				790506542056A0AD006AA6EC /* ru */,
-				790506562056A0B6006AA6EC /* en */,
+				7905067B2057D5A9006AA6EC /* ru */,
+				7905067D2057D5B2006AA6EC /* ar */,
+				7905067E2057D5BE006AA6EC /* Base */,
+				790506822057F205006AA6EC /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -946,7 +986,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				7960648A203C66AA00E88CFF /* Base */,
-				79050649205674FE006AA6EC /* ru */,
+				790506732056E41B006AA6EC /* ru */,
+				790506762057C0C9006AA6EC /* ar */,
+				790506802057F1AA006AA6EC /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -955,7 +997,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				7960648F203C66AA00E88CFF /* Base */,
-				79050648205674FE006AA6EC /* ru */,
+				790506722056E41B006AA6EC /* ru */,
+				790506752057C0C8006AA6EC /* ar */,
+				7905067F2057F1AA006AA6EC /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
