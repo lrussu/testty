@@ -22,6 +22,34 @@ class BreedPresenterTest: XCTestCase {
     }
 
     class MockInteractor: BreedInteractor {
+        func getImageUrls(forBreedName: String, completion: @escaping (Result<[String]>) -> Void)
+        {}
+        
+        func viewDidLoad() {
+            
+        }
+        
+        func viewDidSelectBreedCell(index: Int) {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedName() {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedImage() {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedImages() {
+            
+        }
+
+        
+        func getBreedImage(url: String, completion: @escaping (Result<Data>) -> Void) {
+            
+        }
+        
 
     }
 
@@ -30,6 +58,26 @@ class BreedPresenterTest: XCTestCase {
     }
 
     class MockViewController: BreedPresenter {
+        func viewDidLoad() {
+            
+        }
+        
+        func viewDidSelectBreedCell(index: Int) {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedName() {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedImage() {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedImages() {
+            
+        }
+        
 
     }
 }

@@ -21,7 +21,20 @@ class DashboardInteractorTests: XCTestCase {
         super.tearDown()
     }
 
-    class MockPresenter: DashboardInteractor {
+    class MockPresenter: DashboardPresenter {
+        func viewDidLoad() {}
+        
+        func viewDidTapedButtonLewisCarroll() {}
+        
+        func viewDidTapedButtonMain() {}
+        
+        func interactorDidRecieve(data: [String]?) {
+            
+        }
+        
+        func interactorDidRecieveFail(message: String) {
+            
+        }
 
     }
 }

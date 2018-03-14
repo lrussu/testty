@@ -11,7 +11,7 @@ import Foundation
 protocol DashboardPresenter {
     func viewDidLoad()
     func viewDidTapedButtonLewisCarroll()
-    func mainButtonTapped()
+    func viewDidTapedButtonMain()
     func interactorDidRecieve(data: [String]?)
     func interactorDidRecieveFail(message: String)
 }
@@ -33,7 +33,7 @@ class DashboardPresenterImp: DashboardPresenter {
     }
 
     
-    func mainButtonTapped() {       
+    func viewDidTapedButtonMain() {       
         interactor.getBreedNames() {
             [weak self] (result) in
             DispatchQueue.main.async {
@@ -52,10 +52,7 @@ class DashboardPresenterImp: DashboardPresenter {
     }
     
     func viewDidTapedButtonLewisCarroll() {
-        let title = NSLocalizedString("poem_title", comment: "")
-        let message = NSLocalizedString("jabberwockye_content", comment: "")
-        let cancelButtonText = NSLocalizedString("cancel", comment: "")
-        self.router.showAlertWith(title: title, message: message, cancelText: cancelButtonText)
+        self.router.showAlertWith(title: .poemTitle, message: .jabberwockyeContent, cancelText: .cancel)
     }
     
     func interactorDidRecieve(data: [String]?) {

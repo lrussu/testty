@@ -7,29 +7,187 @@
 //
 
 import XCTest
+import Swinject
 @testable import testty
+
+extension DashboardPresenterImp {
+    func viewDidTappedButtonMainWith(closure: @escaping () -> Void) {
+        viewDidTapedButtonMain()
+        closure()
+    }
+}
 
 class DashboardPresenterTest: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    var viewController: DashboardViewController!
+    var presenter: DashboardPresenterImp!
 
     class MockInteractor: DashboardInteractor {
-
+        
+        var getBreedNamesGotCalled = false
+        var isErrorAfterDataReceive = false
+        var completionFromGetBreedName: (Result<[String]>) -> Void = { _ in }
+        
+        func getBreedNames(completion: @escaping (Result<[String]>) -> Void) {
+            completionFromGetBreedName = completion
+            
+            getBreedNamesGotCalled = true
+            
+            if isErrorAfterDataReceive {
+                completion(.Error("Fail"))
+            } else {
+                completion(.Success(["test"]))
+            }
+        }
     }
 
     class MockRouter: DashboardRouter {
-
+        
+        var goOtherModuleWithDataGotCalled = false
+        var showAlertWithGotCalled = false
+        
+        func goOtherModule() {}
+        
+        func goOtherModule(data: [String]?) {
+            goOtherModuleWithDataGotCalled = true
+        }
+        
+        func showAlertWith(title: String, message: String, cancelText: String, style: UIAlertControllerStyle) {
+            showAlertWithGotCalled = true
+        }
     }
 
-    class MockViewController: DashboardPresenter {
+    class MockViewController: DashboardView {
+        
+        var setUpUIGotCalled = false
+        
+        func setUpUI() {
+            setUpUIGotCalled = true
+        }
+        
+        func updateUI() {}
+        
+        func toggleState(state: State) {}
+    }
+    
+    override func setUp() {
+        super.setUp()
+        
+        let builder = DashboardDefaultModuleBuilder(parentContainer: Container())
+        
+        viewController = builder.build()
+        presenter = viewController.presenter as? DashboardPresenterImp
+    }
+    
+    override func tearDown() {
+        presenter = nil
+        viewController = nil
+        
+        super.tearDown()
+    }
+    
+    func testViewIsInjectedInPresenter() {
+        XCTAssertNotNil(presenter.view, "View should have been injected in presenter")
+    }
+    
+    func testInteractorIsInjectedInPresenter() {
+        XCTAssertNotNil(presenter.interactor, "Interactor should have been injected in presenter")
+    }
+    
+    func testRouterIsInjectedInPresenter() {
+        XCTAssertNotNil(presenter.router, "Router should have been injected in presenter")
+    }
+    
+    func testCallsSetUpUIOfViewAfterPresenterCallViewDidLoad() {
+        let mockViewController = MockViewController()
+        presenter.view = mockViewController
+        
+        presenter.viewDidLoad()
+        
+        XCTAssert(mockViewController.setUpUIGotCalled, "view.setUpUI should have been called")
+    }
+    
+    func testCallsShowAlertWithOfRouterAfterPresenterCallsViewDidTapedButtonLewisCarroll() {
+        let mockRouter = MockRouter()
+        presenter.router = mockRouter
+        
+        presenter.viewDidTapedButtonLewisCarroll()
+        
+        XCTAssert(mockRouter.showAlertWithGotCalled, "Router.showAlertWith(...) should have been called")
+    }
+    
+    func testCallsGoOtherModuleWithDataOfRouterAfterPresenterCallsInteractorDidRecieve() {
+        
+        let mockRouter = MockRouter()
+        presenter.router = mockRouter
+        
+        presenter.interactorDidRecieve(data: nil)
+        
+        XCTAssert(mockRouter.goOtherModuleWithDataGotCalled, "router.goOtherModule(data:) should have been called")
+    }
+    
+    
+    func testCallsgetBreedNamesWithCompletionOfInteractorAfterPresenterCallsViewDidTapedButtonMain() {
+        
+        let mockInteractor = MockInteractor()
+        
+        presenter.interactor = mockInteractor
+        
+        presenter.viewDidTapedButtonMain()
+        
+        XCTAssert(mockInteractor.getBreedNamesGotCalled, "interactor.getBreedNames(completion: ) should have been called")
+    }
+    
+    func testGetBreedNamesCompletionOfInteractor() {
+        
+        let mockInteractor = MockInteractor()
+        let itemExpectation = expectation(description: "Interactor runs the callback")
+        
+        
+        mockInteractor.getBreedNames() { (result) in
+            switch result {
+                
+            case .Success(let data):
+                XCTAssertTrue(true)
+                
+            case .Error(let message):
+                XCTAssertTrue(true)
+            }
+            
+            itemExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10) { error in
+            if let error = error {
+                XCTFail("Wait for expectation is errored: \(error)")
+            }
+        }
 
+    }
+    
+    func testCallsGoOtherModuleWithDataOfRouterAfterPresenterRecievedSuccessFromInteractor() {
+        
+        let mockInteractor = MockInteractor()
+        mockInteractor.isErrorAfterDataReceive = true
+        
+        let mockRouter = MockRouter()
+        presenter.interactor = mockInteractor
+        presenter.router = mockRouter
+      
+        let itemExpectation = expectation(description: "Extended presenter runs callback")
+        
+        presenter.viewDidTappedButtonMainWith() {
+            presenter.interactor.c
+            itemExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10) { error in
+            if let error = error {
+                XCTFail("Wait for expectation is errored: \(error)")
+            }
+            
+            XCTAssert(mockRouter.showAlertWithGotCalled, "Router.showAlertWith(...) should have been called")
+        }
+        
     }
 }

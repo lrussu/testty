@@ -22,6 +22,14 @@ class BreedInteractorTests: XCTestCase {
     }
 
     class MockPresenter: BreedInteractor {
+        func getImageUrls(forBreedName: String, completion: @escaping (Result<[String]>) -> Void) {
+            
+        }
+        
+        func getBreedImage(url: String, completion: @escaping (Result<Data>) -> Void) {
+            
+        }
+        
 
     }
 }

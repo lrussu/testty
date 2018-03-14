@@ -53,9 +53,10 @@ class DashboardViewController: UIViewController, DashboardView {
         presenter.viewDidLoad()
     }
     
-    @objc private func tapped() {
+    @objc public func tappedButtonMain() {
+        print("000000000000000000000000000000000000000")
         toggleState(state: .on)
-        presenter.mainButtonTapped()
+        presenter.viewDidTapedButtonMain()
     }
 
     @objc func tappedButtonLewisCarroll() {
@@ -64,12 +65,11 @@ class DashboardViewController: UIViewController, DashboardView {
     
     func showLoading() {
         spinner.startAnimating()
-     //   mainButton.setTitle("Stop", for: .normal)
+ 
     }
     
     func hideLoading() {
         spinner.stopAnimating()
-      //  mainButton.setTitle("Start", for: .normal)
     }
 
     func setUpUI() {
@@ -80,7 +80,8 @@ class DashboardViewController: UIViewController, DashboardView {
         buttonLewisCarroll.setTitle(.lewisCarroll, for: .normal)
         buttonLewisCarroll.titleLabel?.minimumScaleFactor = 0.5;
         buttonLewisCarroll.titleLabel?.adjustsFontSizeToFitWidth = true
-        mainButton.addTarget(self, action: #selector(tapped), for: .touchDown)
+        
+        mainButton.addTarget(self, action: #selector(tappedButtonMain), for: .touchDown)
         buttonLewisCarroll.addTarget(self, action: #selector(tappedButtonLewisCarroll), for: .touchDown)
     }
     

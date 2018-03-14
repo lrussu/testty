@@ -22,14 +22,42 @@ class OtherPresenterTest: XCTestCase {
     }
 
     class MockInteractor: OtherInteractor {
+        func getBreedImageUrl(breedName: String, completion: @escaping (Result<String>) -> Void) {
+            
+        }
+        
+        func getBreedImage(url: String, completion: @escaping (Result<Data>) -> Void) {
+            
+        }
+        
 
     }
 
     class MockRouter: OtherRouter {
+        func goBreedModule(data: Breed) {
+            
+        }
+        
 
     }
 
     class MockViewController: OtherPresenter {
+        func viewDidLoad() {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedNames() {
+            
+        }
+        
+        func viewDidUpdateDataSourceWithBreedImages() {
+            
+        }
+        
+        func viewDidSelectBreedCell(index: Int) {
+            
+        }
+        
 
     }
 }
