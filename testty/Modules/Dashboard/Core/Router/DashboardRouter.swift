@@ -11,7 +11,6 @@ import Swinject
 
 
 protocol DashboardRouter {
- //   func go<T: UIViewController,B: DefaultModuleBuilder>(moduleType: T.Type, builderType: B.Type)
     func goOtherModule()
     func goOtherModule(data: [String]?)
     func showAlertWith(title: String, message: String, cancelText: String, style: UIAlertControllerStyle)

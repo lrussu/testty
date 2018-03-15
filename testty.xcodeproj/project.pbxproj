@@ -28,6 +28,7 @@
 		790506672056C77C006AA6EC /* import_strings.php in Resources */ = {isa = PBXBuildFile; fileRef = 790506662056C77C006AA6EC /* import_strings.php */; };
 		7905066B2056D39E006AA6EC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7905066A2056D39E006AA6EC /* String+Extension.swift */; };
 		7905067A2057D5A9006AA6EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7905067C2057D5A9006AA6EC /* InfoPlist.strings */; };
+		791ECE15205A6F6E005EF09A /* ServiceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791ECE14205A6F6E005EF09A /* ServiceBuilder.swift */; };
 		7951725D2046A63C0095BC5C /* ImageBreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7951725B2046A63C0095BC5C /* ImageBreedCell.swift */; };
 		7951725E2046A63C0095BC5C /* ImageBreedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7951725C2046A63C0095BC5C /* ImageBreedCell.xib */; };
 		795172602047F2C00095BC5C /* BreedImagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7951725F2047F2C00095BC5C /* BreedImagesLayout.swift */; };
@@ -126,6 +127,7 @@
 		790506802057F1AA006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		790506812057F1E8006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		790506822057F205006AA6EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		791ECE14205A6F6E005EF09A /* ServiceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBuilder.swift; sourceTree = "<group>"; };
 		7951725B2046A63C0095BC5C /* ImageBreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBreedCell.swift; sourceTree = "<group>"; };
 		7951725C2046A63C0095BC5C /* ImageBreedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageBreedCell.xib; sourceTree = "<group>"; };
 		7951725F2047F2C00095BC5C /* BreedImagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImagesLayout.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				79CA566A2040319400DC7F30 /* APIService.swift */,
+				791ECE14205A6F6E005EF09A /* ServiceBuilder.swift */,
 				7986D8F8204576A200B0D93B /* Fadeable.swift */,
 				79CA56672040297E00DC7F30 /* CoreDataStack.swift */,
 			);
@@ -891,6 +894,7 @@
 				E06BBB463813B1F452A678CE /* DashboardPresenter.swift in Sources */,
 				A0223168C44FCC659CDFB5FB /* DashboardInteractor.swift in Sources */,
 				7905066B2056D39E006AA6EC /* String+Extension.swift in Sources */,
+				791ECE15205A6F6E005EF09A /* ServiceBuilder.swift in Sources */,
 				62FA45A08E12F954940A6115 /* DashboardRouter.swift in Sources */,
 				79CA56682040297E00DC7F30 /* CoreDataStack.swift in Sources */,
 				FFD2D006D15D9767DD2E3AD5 /* DashboardBuilder.swift in Sources */,

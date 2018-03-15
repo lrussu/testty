@@ -13,15 +13,13 @@ protocol OtherInteractor {
     func getBreedImage(url: String, completion: @escaping (Result<Data>) -> Void)
 }
 
-
-
 class OtherInteractorImp: OtherInteractor {
-    let service = APIService.sharedInstance
+    let service = ServiceBuilder.sharedInstance.container.resolve(APIService.self)
     
     func getBreedImageUrl(breedName: String, completion: @escaping (Result<String>) -> Void) {
        
         let query = "breed/\(breedName)/images/random"
-        service.getValueFromJSON(query: query, key: "message", expectedType: String.self) { (result) in
+        service?.getValueFromJSON(query: query, key: "message", expectedType: String.self) { (result) in
             switch result {
                 
             case .Success(let data):
@@ -34,7 +32,7 @@ class OtherInteractorImp: OtherInteractor {
     }
     
     func getBreedImage(url: String, completion: @escaping (Result<Data>) -> Void) {
-        service.requestData(endpoint: url) { (result) in
+        service?.requestData(endpoint: url) { (result) in
             switch result {
         
             case .Success(let data):

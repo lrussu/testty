@@ -15,11 +15,16 @@ enum Result<T> {
 
 typealias JSON = [String: Any]
 
-class APIService: NSObject {
-    static let sharedInstance = APIService()
+protocol APIService: class {
+    func getValueFromJSON<T>(query: String, key: String, expectedType: T.Type, completion: @escaping (Result<T>) -> Void)
+    func requestData(endpoint: String, completion: @escaping (Result<Data>) -> Void )
+}
+
+class DogService: APIService {
+    static let sharedInstance = DogService()
     let base = "https://dog.ceo/api/"
     
-    func requestData(endpoint: String, completion: @escaping (Result<Data>) -> Void ) {
+    func requestData(endpoint: String, completion: @escaping (Result<Data>) -> Void) {
         guard let url = URL(string: endpoint) else {
             return
         }

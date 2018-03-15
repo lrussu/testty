@@ -10,13 +10,6 @@ import XCTest
 import Swinject
 @testable import testty
 
-extension DashboardPresenterImp {
-    func viewDidTappedButtonMainWith(closure: @escaping () -> Void) {
-        viewDidTapedButtonMain()
-        closure()
-    }
-}
-
 class DashboardPresenterTest: XCTestCase {
 
     var viewController: DashboardViewController!
@@ -165,28 +158,67 @@ class DashboardPresenterTest: XCTestCase {
 
     }
     
-    func testCallsGoOtherModuleWithDataOfRouterAfterPresenterRecievedSuccessFromInteractor() {
+    func testCallsShowAlertOfRouterAfterPresenterRecievedErrorFromInteractor() {
         
         let mockInteractor = MockInteractor()
         mockInteractor.isErrorAfterDataReceive = true
-        
         let mockRouter = MockRouter()
         presenter.interactor = mockInteractor
         presenter.router = mockRouter
-      
-        let itemExpectation = expectation(description: "Extended presenter runs callback")
         
-        presenter.viewDidTappedButtonMainWith() {
-            presenter.interactor.c
+        let itemExpectation = expectation(description: "Interactor runs the callback")
+        
+        presenter.viewDidTapedButtonMain()
+        
+        // Set up the delay
+        let mainQueue = DispatchQueue.main
+        let deadline = DispatchTime.now() + .seconds(5)
+        
+
+        mainQueue.asyncAfter(deadline: deadline) {
+            XCTAssertTrue(mockInteractor.getBreedNamesGotCalled, "interactor.getBreedNames(completion: ) should have been called")
+            XCTAssertTrue(mockRouter.showAlertWithGotCalled, "Router.showAlertWith(...) should have been called")
+
             itemExpectation.fulfill()
         }
         
-        waitForExpectations(timeout: 10) { error in
+        waitForExpectations(timeout: 10) { (error) in
             if let error = error {
-                XCTFail("Wait for expectation is errored: \(error)")
+                print("Error: \(error.localizedDescription)")
             }
+        }
+        
+    }
+    
+    func testCallsGoOtherModuleWithDataOfRouterAfterPresenterRecievedSuccessFromInteractor() {
+        
+        let mockInteractor = MockInteractor()
+        mockInteractor.isErrorAfterDataReceive = false
+        let mockRouter = MockRouter()
+        
+        presenter.interactor = mockInteractor
+        presenter.router = mockRouter
+        
+        let itemExpectation = expectation(description: "Interactor runs the callback")
+        
+        presenter.viewDidTapedButtonMain()
+        
+        // Set up the delay
+        let mainQueue = DispatchQueue.main
+        let deadline = DispatchTime.now() + .seconds(5)
+        
+        
+        mainQueue.asyncAfter(deadline: deadline) {
+            XCTAssertTrue(mockInteractor.getBreedNamesGotCalled, "interactor.getBreedNames(completion: ) should have been called")
+            XCTAssertTrue(mockRouter.goOtherModuleWithDataGotCalled, "router.goOtherModule(data:) should have been called")
             
-            XCTAssert(mockRouter.showAlertWithGotCalled, "Router.showAlertWith(...) should have been called")
+            itemExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10) { (error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
         }
         
     }

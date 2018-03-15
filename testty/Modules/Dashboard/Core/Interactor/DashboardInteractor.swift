@@ -15,11 +15,13 @@ protocol DashboardInteractor {
 
 class DashboardInteractorImp: DashboardInteractor {
     
+    var service: APIService! = ServiceBuilder.sharedInstance.container.resolve(APIService.self)
+    
     func getBreedNames(completion: @escaping (Result<[String]>) -> Void) {
-        let service = APIService.sharedInstance
+  
         let query = "breeds/list"
        
-        service.getValueFromJSON(query: query, key: "message", expectedType: [String].self) { (result) in
+        service?.getValueFromJSON(query: query, key: "message", expectedType: [String].self) { (result) in
             switch result {
                 
                 case .Success(let breedNames):
